@@ -10,8 +10,12 @@ warnings-deferred: clean
 
 .PHONY: warnings-deferred
 
-warnings-ghc: clean
+warnings-ghc-deferred: clean
 	bash -c "ghc --make -Wall -fdefer-diagnostics src/Lib.hs src/Lib/A.hs src/Lib/B.hs"
+	ghc --version
+
+warnings-ghc-regular: clean
+	bash -c "ghc --make -Wall src/Lib.hs src/Lib/A.hs src/Lib/B.hs"
 	ghc --version
 
 .PHONY: warnings-ghc
