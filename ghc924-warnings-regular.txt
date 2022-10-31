@@ -1,0 +1,96 @@
+cabal clean
+bash -c "rm -rf src/**/*.{hi,o}"
+bash -c "rm -rf **/*.{hi,o}"
+cabal build lib
+Resolving dependencies...
+Build profile: -w ghc-9.2.4 -O1
+In order, the following will be built (use -v for more details):
+ - defer-diagnostics-test-0.1.0.0 (lib) (first run)
+Configuring library for defer-diagnostics-test-0.1.0.0..
+Preprocessing library for defer-diagnostics-test-0.1.0.0..
+Building library for defer-diagnostics-test-0.1.0.0..
+[1 of 4] Compiling Lib.A            ( src/Lib/A.hs, /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/Lib/A.o, /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/Lib/A.dyn_o )
+
+src/Lib/A.hs:1:1: warning: [-Wmissing-export-lists]
+    The export item ‘module Lib.A’ is missing an export list
+  |
+1 | module Lib.A where
+  | ^
+
+src/Lib/A.hs:3:1: warning: [-Wmissing-signatures]
+    Top-level binding with no type signature: blast :: Integer
+  |
+3 | blast = 1
+  | ^^^^^
+
+src/Lib/A.hs:3:9: warning: [-Wtype-defaults]
+    • Defaulting the following constraint to type ‘Integer’
+        Num a0 arising from the literal ‘1’
+    • In the expression: 1
+      In an equation for ‘blast’: blast = 1
+  |
+3 | blast = 1
+  |         ^
+[2 of 4] Compiling Lib.B            ( src/Lib/B.hs, /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/Lib/B.o, /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/Lib/B.dyn_o )
+
+src/Lib/B.hs:1:1: warning: [-Wmissing-export-lists]
+    The export item ‘module Lib.B’ is missing an export list
+  |
+1 | module Lib.B where
+  | ^
+
+src/Lib/B.hs:3:1: warning: [-Wmissing-signatures]
+    Top-level binding with no type signature: warnmeup :: Integer
+  |
+3 | warnmeup = 4
+  | ^^^^^^^^
+
+src/Lib/B.hs:3:12: warning: [-Wtype-defaults]
+    • Defaulting the following constraint to type ‘Integer’
+        Num a0 arising from the literal ‘4’
+    • In the expression: 4
+      In an equation for ‘warnmeup’: warnmeup = 4
+  |
+3 | warnmeup = 4
+  |            ^
+[3 of 4] Compiling Lib              ( src/Lib.hs, /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/Lib.o, /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/Lib.dyn_o )
+
+src/Lib.hs:5:1: warning: [-Wunused-imports]
+    The import of ‘Lib.A’ is redundant
+      except perhaps to import instances from ‘Lib.A’
+    To import instances alone, use: import Lib.A()
+  |
+5 | import Lib.A
+  | ^^^^^^^^^^^^
+
+src/Lib.hs:6:1: warning: [-Wunused-imports]
+    The import of ‘Lib.B’ is redundant
+      except perhaps to import instances from ‘Lib.B’
+    To import instances alone, use: import Lib.B()
+  |
+6 | import Lib.B
+  | ^^^^^^^^^^^^
+
+src/Lib.hs:8:1: warning: [-Wunused-top-binds]
+    Defined but not used: ‘blah’
+  |
+8 | blah = 3
+  | ^^^^
+
+src/Lib.hs:8:1: warning: [-Wmissing-signatures]
+    Top-level binding with no type signature: blah :: Integer
+  |
+8 | blah = 3
+  | ^^^^
+
+src/Lib.hs:8:8: warning: [-Wtype-defaults]
+    • Defaulting the following constraint to type ‘Integer’
+        Num a0 arising from the literal ‘3’
+    • In the expression: 3
+      In an equation for ‘blah’: blah = 3
+  |
+8 | blah = 3
+  |        ^
+[4 of 4] Compiling Paths_defer_diagnostics_test ( /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/autogen/Paths_defer_diagnostics_test.hs, /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/Paths_defer_diagnostics_test.o, /home/matt/Projects/defer-diagnostics-test/dist-newstyle/build/x86_64-linux/ghc-9.2.4/defer-diagnostics-test-0.1.0.0/build/Paths_defer_diagnostics_test.dyn_o )
+ghc --version
+The Glorious Glasgow Haskell Compilation System, version 9.2.4
